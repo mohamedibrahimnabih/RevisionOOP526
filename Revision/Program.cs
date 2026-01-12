@@ -90,7 +90,77 @@
 
                     case "3":
                         {
-                            // SOLVE YOUR CHALLENG HERE
+                            Console.WriteLine("Enter Category Name");
+                            string name = Console.ReadLine();
+
+                            bool isFounded = false;
+                            foreach (var item in context.Categories)
+                            {
+                                if(item.Name == name)
+                                {
+                                    context.Categories.Remove(item);
+                                    Console.WriteLine("Remove Category Successfully");
+
+                                    isFounded = true;
+                                    break;
+                                }
+                            }
+
+                            if(!isFounded)
+                                Console.WriteLine("Category Not Founded");
+                        }
+                        break;
+
+                    case "4":
+                        {
+                            Console.WriteLine("Enter ISBN:");
+                            string isbn = Console.ReadLine();
+
+                            Console.WriteLine("Enter Title:");
+                            string title = Console.ReadLine();
+
+                            Console.WriteLine("Enter Description:");
+                            string description = Console.ReadLine();
+
+                            Console.WriteLine("Enter Author:");
+                            string author = Console.ReadLine();
+
+                            Console.WriteLine("Enter Price:");
+                            long price = Convert.ToInt64(Console.ReadLine());
+
+                            Console.WriteLine("Enter Quantity:");
+                            int quantity = Convert.ToInt32(Console.ReadLine());
+
+                            Console.WriteLine("Enter Category Name:");
+                            string categoryName = Console.ReadLine();
+
+
+                            bool categoryIsFounded = false;
+                            foreach (var item in context.Categories)
+                            {
+                                if(item.Name == categoryName)
+                                {
+
+                                    context.Books.Add(new()
+                                    {
+                                        ISBN = isbn,
+                                        Author = author,
+                                        Title = title,
+                                        Description = description,
+                                        Price = price,
+                                        CategoryName = categoryName,
+                                        Quantity = quantity
+                                    });
+
+                                    Console.WriteLine("Add Book Successfully");
+
+                                    categoryIsFounded = true;
+                                    break;
+                                }
+                            }
+
+                            if(!categoryIsFounded)
+                                Console.WriteLine("Category Not Founded");
                         }
                         break;
 
