@@ -23,9 +23,9 @@
                 Console.WriteLine("12. Exist");
 
                 Console.WriteLine("Enter Your selection: ");
-                string selection = Console.ReadLine(); 
+                string selection = Console.ReadLine();
 
-                switch(selection)
+                switch (selection)
                 {
                     case "1":
                         {
@@ -60,7 +60,7 @@
                             bool isFounded = false;
                             foreach (var item in context.Categories)
                             {
-                                if(item.Name == name)
+                                if (item.Name == name)
                                 {
 
                                     Console.WriteLine("Enter Id");
@@ -83,8 +83,14 @@
                                 }
                             }
 
-                            if(!isFounded)
+                            if (!isFounded)
                                 Console.WriteLine("Category Not Founded");
+                        }
+                        break;
+
+                    case "3":
+                        {
+                            // SOLVE YOUR CHALLENG HERE
                         }
                         break;
 
